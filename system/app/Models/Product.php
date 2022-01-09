@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use App\models\Traits\Attributes\ProdukAttributes;
-use App\models\Traits\Relations\ProdukRelationship;
+use App\models\Traits\Relations\ProdukRelations;
 use Illuminate\Support\Str;
 
 class Product extends  Model {
 
-  use ProdukAttributes, ProdukRelationship;
+  use ProdukAttributes, ProdukRelations;
 
   protected $table = "product";
   protected $primaryKey = 'uuid';

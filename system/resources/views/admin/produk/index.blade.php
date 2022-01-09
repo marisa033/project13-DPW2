@@ -72,9 +72,9 @@
 								<td>{{$loop->iteration}}</td>
 								<td >
 									<div class="btn-group" style="float: left;">
-									<a href="{{url ('admin/produk', $produk->id)}}" class="btn btn-sm btn-dark"><i class="fa fa-info"></i></a>
-									<a href="{{url ('admin/produk', $produk->id)}}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
-									@include('admin.utils.delete', ['url' => url ('admin/produk', $produk->id)])
+									<a href="{{url ('admin/produk', $produk->uuid)}}" class="btn btn-sm btn-dark"><i class="fa fa-info"></i></a>
+									<a href="{{url ('admin/produk', $produk->uuid)}}/edit" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+									@include('admin.utils.delete', ['url' => url ('admin/produk', $produk->uuid)])
 									</div>
 								</td>
 								<td class="text-center">{{ucwords($produk->nama)}}</td>

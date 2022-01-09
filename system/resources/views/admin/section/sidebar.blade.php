@@ -13,7 +13,7 @@
         <ul class="nav">
 
           <li class="nav-item {{checkRouteActive('admin/beranda')}}">
-            <a class="nav-link" href="{{url('admin/beranda')}}">
+            <a href="{{ url("dashboard/{status}")}}" class="nav-link" href="{{url('admin/beranda')}}">
               <i class="fa fa-tachometer"></i>
               <p>Beranda</p>
             </a>

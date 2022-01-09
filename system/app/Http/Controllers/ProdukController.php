@@ -65,6 +65,8 @@ class ProdukController extends Controller {
 		$stok = explode(",", request('stok'));
 		$harga_min = request('harga_min');
 		$harga_max = request('harga_max');
+		$data['harga_min'] = $harga_min;
+    	$data['harga_max'] = $harga_max;
 		$data['list_produk'] = Product::where('nama', 'like', "%$nama%")->get();
 		// $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
 		// $data['list_produk'] = Produk::whereIn('stok', $stok)->get();

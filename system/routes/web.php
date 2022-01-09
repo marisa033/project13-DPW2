@@ -47,7 +47,8 @@ Route::get('admin/kategori', [HomeController::class, 'showKategori']);
 
 Route::get('test/{produk}/{hargaMin?}/{hargaMax?}', [HomeController::class, 'test']);
 
-Route::prefix('admin')->middleware('auth')->group(function(){
+// login as Admin
+Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('produk', ProdukController::class);
     Route::resource('user', UserController::class);
@@ -62,10 +63,12 @@ Route::get('/jewellery', [indexController::class, 'showJewellery']);
 Route::get('/keranjang', [indexController::class, 'showKeranjang']);
 Route::get('/detail', [indexController::class, 'showDetail']);
 
+// login proces
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'LoginProcess']);
 Route::get('Logout', [AuthController::class, 'Logout']);
 
+// client
 Route::get('home', [ClientController::class, 'showhome'] );
 Route::get('about', [ClientController::class, 'showabout'] );
 Route::get('contact', [ClientController::class, 'showcontact'] );
